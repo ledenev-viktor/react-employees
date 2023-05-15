@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto 20px;
+    max-width: 1400px;
+}
+
+.teamIcon {
+    font-size: 26px;
+    margin-right: 12px;
+}
+
+.title {
+    margin: 0;
+}
