@@ -9,11 +9,17 @@ import { Paths } from './path';
 import { Login } from './pages/login';
 import { Register } from './pages/register/register';
 import { ConfigProvider, theme } from 'antd';
+import { Auth } from './features/auth/auth';
+import { Empoyees } from './pages/employees';
+import { AddEmployee } from './pages/addEmplyee';
+import { Status } from './pages/status';
+import { Employee } from './pages/employee';
+import { EditEmployee } from './pages/editEmployee';
 
 const router = createBrowserRouter([
   {
     path: Paths.home,
-    element: <h1>Employees</h1>
+    element: <Empoyees />
   },
   {
     path: Paths.login,
@@ -22,6 +28,22 @@ const router = createBrowserRouter([
   {
     path: Paths.register,
     element: <Register />
+  },
+  {
+    path: Paths.employeeAdd,
+    element: <AddEmployee />
+  },
+  {
+    path: `${Paths.status}/:status`,
+    element: <Status />
+  },
+  {
+    path: `${Paths.employee}/:id`,
+    element: <Employee />
+  },
+  {
+    path: `${Paths.employeeEdit}/:id`,
+    element: <EditEmployee />
   },
 ]);
 
@@ -36,7 +58,10 @@ root.render(
           algorithm: theme.darkAlgorithm,
         }}
       >
-        <RouterProvider router={router} />
+        {/* Компонент auth вернет либо loader, либо children  */}
+        <Auth>
+          <RouterProvider router={router} />
+        </Auth>
       </ConfigProvider>
     </Provider>
   </React.StrictMode>

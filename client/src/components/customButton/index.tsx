@@ -1,6 +1,5 @@
 import { Button, Form } from "antd"
 import { ButtonHTMLType, ButtonShape, ButtonType } from "antd/es/button";
-import { IconType } from "antd/es/notification/interface";
 import { FC, ReactNode } from "react"
 
 type CustomButtomProps = {
